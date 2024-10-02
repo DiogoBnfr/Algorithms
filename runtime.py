@@ -1,3 +1,5 @@
+"""This module provides utility functions for performance analysis of Python scripts."""
+
 import datetime
 import subprocess
 import sys
@@ -6,8 +8,21 @@ import time
 
 def measure_execution_time(filename: str, dirpath: str = "") -> None:
     """
-    Executes the .py file passed in as a subprocess. Write the file output to std
-    out and the execution to a file of the same name but with a .out.txt extension
+    Measures and logs the execution time of a Python script.
+
+    This function runs the specified Python file as a subprocess and measures the time it takes to
+    execute. The result, along with a timestamp, is written to an output file named after the Python
+    script but with a `.out.txt` extension. This can be useful for tracking the performance of
+    scripts over time.
+
+    Args:
+        filename (str): The name of the Python file (without the `.py` extension) to be executed.
+        dirpath (str, optional): The directory path where the Python file is located. Defaults to
+        the current directory.
+
+    Output:
+        None: The execution time is logged in a file with the `.out.txt` extension in the same
+        directory.
     """
     f = open(dirpath + filename + ".out.txt", "a")
 
