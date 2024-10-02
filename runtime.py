@@ -17,8 +17,10 @@ def log(filename: str, root: str = "./", log_path: str = "") -> None:
 
     Args:
         filename (str): The name of the Python file (without the `.py` extension) to be executed.
-        dirpath (str, optional): The directory path where the Python file is located. Defaults to
+        root (str, optional): The directory path where the Python file is located. Defaults to
         the current directory.
+        log_path (str, optional): The specific folder inside root where you want to store the log
+        files
 
     Output:
         None: The execution time is logged in a file with the `.out.txt` extension in the same
@@ -30,9 +32,9 @@ def log(filename: str, root: str = "./", log_path: str = "") -> None:
         end_time = time.time()
 
     file.write(
-            f"{str(datetime.datetime.now()).split('.', maxsplit=1)[0]} "
-            + f"ExecutionTime: {end_time - start_time:.10f}\n"
-        )
+        f"{str(datetime.datetime.now()).split('.', maxsplit=1)[0]} "
+        + f"ExecutionTime: {end_time - start_time:.10f}\n"
+    )
 
 
 if __name__ == "__main__":
