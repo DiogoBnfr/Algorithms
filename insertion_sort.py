@@ -1,7 +1,7 @@
 """This module provides a insertion sort algorithm."""
 
 
-def insertion_sort(list: list[int]) -> list[int]:
+def insertion_sort(arr: list[int]) -> list[int]:
     """
     Sorts a list of integers in ascending order using the insertion sort algorithm.
 
@@ -16,14 +16,14 @@ def insertion_sort(list: list[int]) -> list[int]:
     Returns:
         list[int]: The sorted list of integers.
     """
-    for i in range(1, len(list)):
+    for i in range(1, len(arr)):
         while i > 0:
-            if list[i] < list[i - 1]:
-                list[i], list[i - 1] = list[i - 1], list[i]
+            if arr[i] < arr[i - 1]:
+                arr[i], arr[i - 1] = arr[i - 1], arr[i]
                 i -= 1
             else:
                 break
-    return list
+    return arr
 
 
 list = [7, 3, 1, 6, 4, 2]
