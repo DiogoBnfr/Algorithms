@@ -1,5 +1,9 @@
 """This module provides a insertion sort algorithm."""
 
+import random
+
+from colorama import Fore, Style
+
 
 def insertion_sort(arr: list[int]) -> list[int]:
     """
@@ -26,5 +30,12 @@ def insertion_sort(arr: list[int]) -> list[int]:
     return arr
 
 
-list = [7, 3, 1, 6, 4, 2]
-print(*insertion_sort(list), sep=", ")
+if __name__ == "__main__":
+    random.seed(42)
+    sample = [random.randint(0, 100) for _ in range(10000)]
+
+    print(f"{Fore.RED}{sample}")  # type: ignore
+    print(Style.RESET_ALL)
+    insertion_sort(sample)
+    print(f"{Fore.GREEN}{sample}")  # type: ignore
+    print(Style.RESET_ALL)
